@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './LandingPage.module.scss';
 import Landing1 from '../../assets/landing1.png';
 import Button from '../../components/commons/Button/Button';
+import { Link } from 'react-router-dom';
 
 function LandingPage() {
   return (
@@ -21,12 +22,19 @@ function LandingPage() {
         </div>
       </article>
       <div className={styles.btnList}>
-        <Button btnTheme="primary" btnSize="large2small">
-          직접 만들기
-        </Button>
-        <Button btnTheme="primary" btnSize="large2small">
-          JSON으로 만들기
-        </Button>
+        <Link className={styles.btnItem} to="/edit">
+          <Button btnTheme="primary" btnSize="large2small">
+            직접 만들기
+          </Button>
+        </Link>
+        <Link className={styles.btnItem} to="/edit-json">
+          <Button
+            className={styles.btnItem}
+            btnTheme="primary"
+            btnSize="large2small">
+            JSON으로 만들기
+          </Button>
+        </Link>
       </div>
     </main>
   );
