@@ -1,0 +1,82 @@
+$grayscale-10: #fff;
+$grayscale-20: #f9f9f9;
+$grayscale-30: #cfcfcf;
+$grayscale-40: #818181;
+$grayscale-50: #515151;
+$grayscale-60: #000;
+
+$secondary: #de8bb4;
+$primary: #f8017c;
+
+$blue: #1877f2;
+$yellow: #fee500;
+$red: #b93333;
+
+@mixin h1 {
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+@mixin h2 {
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 4rem; /* 125% */
+}
+
+@mixin h3 {
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 3rem; /* 125% */
+}
+
+@mixin body1 {
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.5rem; /* 125% */
+}
+
+@mixin body2 {
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.4rem; /* 133.333% */
+}
+
+@mixin body3 {
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.2rem; /* 133.333% */
+}
+
+@mixin caption1 {
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.8rem; /* 128.571% */
+}
+
+@mixin shadow-1pt {
+  border-radius: 1.6rem;
+  border: 1px solid $grayscale-30;
+  background: $grayscale-10;
+  box-shadow: 0px 4px 4px 0px rgba(140, 140, 140, 0.25);
+}
+@mixin shadow-2pt {
+  border-radius: 1.6rem;
+  border: 1px solid $grayscale-30;
+  background: $grayscale-10;
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+@mixin shadow-3pt {
+  border-radius: 1.6rem;
+  border: 1px solid $grayscale-30;
+  background: $grayscale-10;
+
+  box-shadow: 0px 16px 20px 0px rgba(48, 48, 48, 0.62);
+}
