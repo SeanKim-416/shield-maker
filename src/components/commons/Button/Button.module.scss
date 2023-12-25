@@ -1,0 +1,43 @@
+@import '../../../styles/variables';
+
+@mixin large {
+  @include body3;
+  display: inline-flex;
+  padding: 1.2rem 2.4rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+@mixin small {
+  @include caption1;
+  display: inline-flex;
+  padding: 0.8rem 1.2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 0.8rem;
+}
+
+.primary {
+  background: $primary;
+  color: $grayscale-10;
+  &:hover {
+    border: 2px solid $primary;
+  }
+}
+
+.large2small {
+  @media screen and (min-width: 375px) {
+    padding: 0.8rem 1.2rem;
+    @include small;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 1.2rem 2.4rem;
+    @include large;
+  }
+}
