@@ -1,0 +1,19 @@
+@import '../../../styles/variables';
+
+.badge {
+  display: inline-flex;
+  padding: 0rem 0.8rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 0.4rem;
+  background: $secondary;
+  border: 1px solid $primary;
+  color: $primary;
+
+  @include h3;
+}
+
+.button {
+  cursor: pointer;
+}
