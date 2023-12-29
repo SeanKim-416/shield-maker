@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './LandingPage.module.scss';
+import styles from './Landing.module.scss';
 import Landing1 from '../../assets/landing1.png';
 import Button from '../../components/commons/Button/Button';
 import { Link } from 'react-router-dom';
 
-function LandingPage() {
+function Landing() {
   return (
     <main className={styles.main}>
       <article className={styles.article}>
@@ -40,4 +40,4 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+export default Landing;
