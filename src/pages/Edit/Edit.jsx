@@ -3,6 +3,8 @@ import ToggleButton from '../../components/commons/ToggleButton/ToggleButton';
 import Input from '../../components/commons/Input/Input';
 import Badge from '../../components/commons/Badge/Badge';
 function Edit() {
+  // 저장될 데이터들
+  // input의 입력값
   return (
     <main className={styles.main}>
       <ToggleButton />
