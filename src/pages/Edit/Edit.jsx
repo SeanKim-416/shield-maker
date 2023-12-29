@@ -5,6 +5,7 @@ function Edit() {
   return (
     <main className={styles.main}>
       <ToggleButton />
+      <div className={styles.badgeContainer}></div>
       <Input />
     </main>
   );
