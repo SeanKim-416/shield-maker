@@ -40,7 +40,21 @@
   list-style-type: none;
   border-radius: 0.8rem;
   border: 1px solid $grayscale-40;
-  padding: 1rem 0;
+  padding: 1.2rem 0;
+  max-height: 27.2rem;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    height: 90%;
+    width: 1rem;
+    z-index: 1;
+    background-color: $grayscale-20;
+    border-radius: 9999px;
+    // overflow: hidden;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    border-radius: 9999px;
+  }
 }
 
 .li {
