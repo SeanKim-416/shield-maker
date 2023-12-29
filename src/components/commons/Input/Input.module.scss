@@ -1,0 +1,29 @@
+@import '../../../styles/variables';
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+
+  padding: 1.2rem 1.6rem;
+  border: 1px solid $grayscale-40;
+  border-radius: 0.8rem;
+  background: white;
+
+  width: 100%;
+  max-width: 77rem;
+
+  @include body3;
+  width: 100%;
+  outline: none;
+
+  &::placeholder {
+    @include body3;
+    color: $grayscale-40;
+  }
+
+  &:focus {
+    border: 2px solid $primary;
+  }
+}
