@@ -4,6 +4,7 @@ import Input from '../../components/commons/Input/Input';
 import Badge from '../../components/commons/Badge/Badge';
 import Dropdown from '../../components/commons/Dropdown/Dropdown';
 import { useState } from 'react';
+import BADGE_OPTIONS from '../../constants/badgeOptions';
 function Edit() {
   const [techStacks, setTechStacks] = useState([]);
   // input의 입력값
@@ -32,7 +33,7 @@ function Edit() {
           );
         })}
       </div>
-      <Dropdown option={1} />
+      <Dropdown option={BADGE_OPTIONS} />
       <Input onAdd={onAdd} />
     </main>
   );

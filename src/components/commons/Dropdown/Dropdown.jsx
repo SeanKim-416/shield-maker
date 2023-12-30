@@ -4,11 +4,9 @@ import ArrowTop from '../../../assets/arrow_top.svg';
 import ArrowDown from '../../../assets/arrow_down.svg';
 import useDetectClose from '../../../utils/hooks/useDetectClose';
 
-const data = ['선택지 1', '선택지 2', '선택지 3', '선택지 4'];
-
-function Dropdown() {
+function Dropdown({ option = [] }) {
   const dropDownRef = useRef();
-  const [value, setValue] = useState('선택지 1');
+  const [value, setValue] = useState(option[0].data);
 
   const [isOpen, setIsOpen] = useDetectClose(dropDownRef);
 
@@ -24,16 +22,16 @@ function Dropdown() {
 
       {isOpen && (
         <ul className={styles.optionList}>
-          {data.map((item) => {
+          {option.map((item) => {
             return (
               <li
-                key={item}
-                data-content={item}
+                key={item.type}
+                data-content={item.type}
                 className={styles.optionItem}
-                onClick={(e) => {
-                  setValue(e.target.dataset['content']);
+                onClick={() => {
+                  setValue(item.data);
                 }}>
-                {item}
+                {item.data}
               </li>
             );
           })}
