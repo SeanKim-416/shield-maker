@@ -44,7 +44,6 @@
   max-height: 27.2rem;
   overflow-y: scroll;
   &::-webkit-scrollbar {
-    height: 90%;
     width: 1rem;
     z-index: 1;
     background-color: $grayscale-20;
@@ -62,4 +61,8 @@
   padding: 1.2rem 1.6rem;
 
   @include body3;
+
+  &:hover {
+    background: $secondary;
+  }
 }

@@ -2,19 +2,24 @@ import styles from './Edit.module.scss';
 import ToggleButton from '../../components/commons/ToggleButton/ToggleButton';
 import Input from '../../components/commons/Input/Input';
 import Badge from '../../components/commons/Badge/Badge';
+import { useState } from 'react';
 function Edit() {
-  // 저장될 데이터들
+  const [techStacks, setTechStacks] = useState([]);
   // input의 입력값
+
+  const onAdd = (newStack) => {
+    setTechStacks([...techStacks, newStack]);
+  };
+
   return (
     <main className={styles.main}>
       <ToggleButton />
       <div className={styles.badgeContainer}>
-        <Badge>깃허브</Badge>
-        <Badge>깃허브</Badge>
-        <Badge>깃허브</Badge>
-        <Badge>깃허브</Badge>
+        {techStacks.map((item) => {
+          return <Badge>{item}</Badge>;
+        })}
       </div>
-      <Input />
+      <Input onAdd={onAdd} />
     </main>
   );
 }
