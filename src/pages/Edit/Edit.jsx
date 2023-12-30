@@ -13,8 +13,8 @@ function Edit() {
 
   const onDelete = (targetStack) => {
     setTechStacks(
-      techStacks.filter((stacks) => {
-        return targetStack !== stacks;
+      techStacks.filter((stack) => {
+        return targetStack !== stack.title;
       })
     );
   };
@@ -23,8 +23,12 @@ function Edit() {
     <main className={styles.main}>
       <ToggleButton />
       <div className={styles.badgeContainer}>
-        {techStacks.map((item) => {
-          return <Badge onDelete={onDelete}>{item}</Badge>;
+        {techStacks.map((item, i) => {
+          return (
+            <Badge key={`${item.title}${i}`} onDelete={onDelete}>
+              {item.title}
+            </Badge>
+          );
         })}
       </div>
       <Input onAdd={onAdd} />

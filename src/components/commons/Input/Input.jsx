@@ -1,21 +1,21 @@
 import { useState } from 'react';
 import styles from './Input.module.scss';
-import getFilteredTitles from '../../../utils/functions/getFilteredTitles';
+import getFilteredIcons from '../../../utils/functions/getFilteredIcons';
 
 function Input({ onAdd }) {
   const [value, setValue] = useState('');
-  const [filteredTitles, setFilteredTitles] = useState([]);
+  const [filteredIcons, setFilteredIcons] = useState([]);
 
   // onChange 이벤트에 따른 필터링
   const handleChange = (e) => {
     setValue(e.target.value);
     if (value.length > 1) {
-      setFilteredTitles(getFilteredTitles(value));
+      setFilteredIcons(getFilteredIcons(value));
     }
   };
 
   const handleClick = (e) => {
-    onAdd(e.target.dataset['title']);
+    onAdd({ title: e.target.dataset['title'] });
   };
 
   return (
@@ -27,24 +27,19 @@ function Input({ onAdd }) {
       />
       {value.length > 1 && (
         <ul className={styles.ul}>
-          {filteredTitles.length === 0 && (
-            <li
-              key={0}
-              onClick={handleClick}
-              data-title={value}
-              className={styles.li}>
+          {filteredIcons.length === 0 && (
+            <li key={0} onClick={handleClick} className={styles.li}>
               직접 추가하기
             </li>
           )}
-          {filteredTitles.length > 0 &&
-            filteredTitles.map((title, i) => {
+          {filteredIcons.length > 0 &&
+            filteredIcons.map((icon, i) => {
               return (
                 <li
-                  onClick={handleClick}
-                  key={`${title}${i}`}
-                  data-title={title}
+                  onClick={() => onAdd(icon)}
+                  key={`${icon.title}${i}`}
                   className={styles.li}>
-                  {title}
+                  {icon.title}
                 </li>
               );
             })}
