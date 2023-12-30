@@ -1,9 +1,9 @@
 import styles from './Badge.module.scss';
 import { TiDelete } from 'react-icons/ti';
 
-function Badge({ children }) {
+function Badge({ children, onDelete }) {
   const handleClick = () => {
-    console.log('hi');
+    onDelete(children);
   };
 
   return (
