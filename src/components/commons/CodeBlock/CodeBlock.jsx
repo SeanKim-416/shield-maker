@@ -5,6 +5,7 @@ import { BsCopy } from 'react-icons/bs';
 import { IoCheckmark } from 'react-icons/io5';
 import styles from './CodeBlock.module.scss';
 import React, { useState } from 'react';
+import clsx from 'clsx';
 
 function CodeBlock({ techstacks, buttontype }) {
   const [isCopied, setIsCopied] = useState(false);
@@ -36,7 +37,9 @@ function CodeBlock({ techstacks, buttontype }) {
         style={stackoverflowLight}>
         {code}
       </SyntaxHighlighter>
-      <span onClick={handleClick} className={styles.copyBtn}>
+      <span
+        onClick={handleClick}
+        className={clsx(styles.copyBtn, isCopied && styles.copied)}>
         {isCopied ? <IoCheckmark /> : <BsCopy />}
       </span>
     </div>
