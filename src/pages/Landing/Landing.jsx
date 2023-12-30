@@ -27,14 +27,15 @@ function Landing() {
             직접 만들기
           </Button>
         </Link>
-        <Link className={styles.btnItem} to="/edit-json">
+        {/* <Link className={styles.btnItem} to="/edit-json">
           <Button
+            disabled
             className={styles.btnItem}
             btnTheme="primary"
             btnSize="large2small">
             JSON으로 만들기
           </Button>
-        </Link>
+        </Link> */}
       </div>
     </main>
   );
