@@ -15,6 +15,7 @@ function Input({ onAdd }) {
   };
 
   const handleClick = (e) => {
+    setValue('');
     onAdd({ title: value });
   };
 

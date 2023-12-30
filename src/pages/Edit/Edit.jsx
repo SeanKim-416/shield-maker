@@ -6,6 +6,7 @@ import Dropdown from '../../components/commons/Dropdown/Dropdown';
 import { useState } from 'react';
 import BADGE_OPTIONS from '../../constants/badgeOptions';
 import ResultTab from '../../components/ResultTab/ResultTab';
+import BadgeContainer from '../../components/commons/BadgeContainer/BadgeContainer';
 function Edit() {
   const [tab, setTab] = useState('form');
   const [techStacks, setTechStacks] = useState([]);
@@ -23,16 +24,12 @@ function Edit() {
     );
   };
 
-  const handleSubmit = () => {
-    setTab('preview');
-  };
-
   return (
     <main className={styles.main}>
       <ToggleButton onClick={setTab} />
       {tab === 'form' ? (
         <>
-          <div className={styles.badgeContainer}>
+          <BadgeContainer>
             {techStacks.map((item, i) => {
               return (
                 <Badge key={`${item.title}${i}`} onDelete={onDelete}>
@@ -40,10 +37,10 @@ function Edit() {
                 </Badge>
               );
             })}
-          </div>
+          </BadgeContainer>
+
           <Dropdown option={BADGE_OPTIONS} onClick={setBadgeType} />
           <Input onAdd={onAdd} />
-          <button onClick={handleSubmit}>이대로 만들기</button>
         </>
       ) : (
         <>
