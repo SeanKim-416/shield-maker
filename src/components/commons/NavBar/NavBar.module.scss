@@ -1,12 +1,25 @@
 @import '../../../styles/variables';
 
 .header {
-  @include h3;
   display: flex;
   width: 100%;
   padding: 1.1rem 2rem;
   align-items: center;
   background-color: $primary;
+}
 
+.logo {
+  @include h3;
   color: #fff;
+  text-decoration: none;
+}
+
+.title {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  & img {
+    width: 2.9rem;
+    height: 2.9rem;
+  }
 }

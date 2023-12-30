@@ -7,8 +7,8 @@ import Edit from './pages/Edit/Edit';
 function App() {
   return (
     <div className="App">
-      <NavBar />
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/edit" element={<Edit />} />
