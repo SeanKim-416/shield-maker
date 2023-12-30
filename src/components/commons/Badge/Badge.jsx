@@ -1,7 +1,11 @@
+import { useContext } from 'react';
 import styles from './Badge.module.scss';
 import { TiDelete } from 'react-icons/ti';
+import { StackContext } from '../../../pages/Edit/Edit';
 
-function Badge({ children, onDelete }) {
+function Badge({ children }) {
+  const { onDelete } = useContext(StackContext);
+
   const handleClick = () => {
     onDelete(children);
   };

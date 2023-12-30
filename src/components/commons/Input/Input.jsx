@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import styles from './Input.module.scss';
 import getFilteredIcons from '../../../utils/functions/getFilteredIcons';
+import { StackContext } from '../../../pages/Edit/Edit';
 
-function Input({ onAdd }) {
+function Input() {
   const [value, setValue] = useState('');
   const [filteredIcons, setFilteredIcons] = useState([]);
+
+  const { onAdd } = useContext(StackContext);
 
   // onChange 이벤트에 따른 필터링
   const handleChange = (e) => {
