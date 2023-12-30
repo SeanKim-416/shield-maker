@@ -21,6 +21,7 @@ function Input({ onAdd }) {
   return (
     <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
       <input
+        value={value}
         onChange={handleChange}
         className={styles.input}
         placeholder="스택 명을 입력하세요"
@@ -36,7 +37,10 @@ function Input({ onAdd }) {
             filteredIcons.map((icon, i) => {
               return (
                 <li
-                  onClick={() => onAdd(icon)}
+                  onClick={() => {
+                    onAdd(icon);
+                    setValue('');
+                  }}
                   key={`${icon.title}${i}`}
                   className={styles.li}>
                   {icon.title}

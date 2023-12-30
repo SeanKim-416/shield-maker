@@ -4,7 +4,7 @@ import ArrowTop from '../../../assets/arrow_top.svg';
 import ArrowDown from '../../../assets/arrow_down.svg';
 import useDetectClose from '../../../utils/hooks/useDetectClose';
 
-function Dropdown({ option = [] }) {
+function Dropdown({ option = [], onClick }) {
   const dropDownRef = useRef();
   const [value, setValue] = useState(option[0].data);
 
@@ -26,10 +26,12 @@ function Dropdown({ option = [] }) {
             return (
               <li
                 key={item.type}
-                data-content={item.type}
+                data-type={item.type}
+                data-style={item.data}
                 className={styles.optionItem}
                 onClick={() => {
                   setValue(item.data);
+                  onClick(item.type);
                 }}>
                 {item.data}
               </li>

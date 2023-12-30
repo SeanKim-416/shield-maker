@@ -7,7 +7,7 @@ import { useState } from 'react';
 import BADGE_OPTIONS from '../../constants/badgeOptions';
 function Edit() {
   const [techStacks, setTechStacks] = useState([]);
-  // input의 입력값
+  const [badgeType, setBadgeType] = useState('flat');
 
   const onAdd = (newStack) => {
     setTechStacks([...techStacks, newStack]);
@@ -19,6 +19,11 @@ function Edit() {
         return targetStack !== stack.title;
       })
     );
+  };
+
+  const handleSubmit = () => {
+    console.log(techStacks);
+    console.log(badgeType);
   };
 
   return (
@@ -33,8 +38,9 @@ function Edit() {
           );
         })}
       </div>
-      <Dropdown option={BADGE_OPTIONS} />
+      <Dropdown option={BADGE_OPTIONS} onClick={setBadgeType} />
       <Input onAdd={onAdd} />
+      <button onClick={handleSubmit}>이대로 만들기</button>
     </main>
   );
 }
