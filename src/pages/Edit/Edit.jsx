@@ -3,12 +3,15 @@ import ToggleButton from '../../components/commons/ToggleButton/ToggleButton';
 import Input from '../../components/commons/Input/Input';
 import Badge from '../../components/commons/Badge/Badge';
 import Dropdown from '../../components/commons/Dropdown/Dropdown';
-import { useState } from 'react';
+import { createContext, useState } from 'react';
 import BADGE_OPTIONS from '../../constants/badgeOptions';
 import ResultTab from '../../components/ResultTab/ResultTab';
 import BadgeContainer from '../../components/commons/BadgeContainer/BadgeContainer';
+
+export const ToggleContext = createContext();
+
 function Edit() {
-  const [tab, setTab] = useState('form');
+  const [selectedToggle, setSelectedToggle] = useState('form');
   const [techStacks, setTechStacks] = useState([]);
   const [badgeType, setBadgeType] = useState('flat');
 
@@ -26,8 +29,10 @@ function Edit() {
 
   return (
     <main className={styles.main}>
-      <ToggleButton onClick={setTab} />
-      {tab === 'form' ? (
+      <ToggleContext.Provider value={{ selectedToggle, setSelectedToggle }}>
+        <ToggleButton />
+      </ToggleContext.Provider>
+      {selectedToggle === 'form' ? (
         <>
           <BadgeContainer>
             {techStacks.map((item, i) => {
