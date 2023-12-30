@@ -2,6 +2,7 @@ import styles from './Edit.module.scss';
 import ToggleButton from '../../components/commons/ToggleButton/ToggleButton';
 import Input from '../../components/commons/Input/Input';
 import Badge from '../../components/commons/Badge/Badge';
+import Dropdown from '../../components/commons/Dropdown/Dropdown';
 import { useState } from 'react';
 function Edit() {
   const [techStacks, setTechStacks] = useState([]);
@@ -31,6 +32,7 @@ function Edit() {
           );
         })}
       </div>
+      <Dropdown option={1} />
       <Input onAdd={onAdd} />
     </main>
   );
