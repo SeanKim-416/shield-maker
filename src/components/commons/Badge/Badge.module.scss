@@ -11,7 +11,12 @@
   border: 1px solid $primary;
   color: $primary;
 
-  @include h3;
+  @media screen and (min-width: 375px) {
+    @include body2;
+  }
+  @media screen and (min-width: 768px) {
+    @include h3;
+  }
 }
 
 .button {

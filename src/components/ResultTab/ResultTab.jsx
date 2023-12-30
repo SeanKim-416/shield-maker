@@ -1,8 +1,9 @@
 import getSrcLink from '../../utils/functions/getSrcLink';
+import BadgeContainer from '../commons/BadgeContainer/BadgeContainer';
 
 function ResultTab({ techStacks, badgeType }) {
   return (
-    <div>
+    <BadgeContainer>
       {techStacks.map((stack) => {
         return (
           <img
@@ -12,7 +13,7 @@ function ResultTab({ techStacks, badgeType }) {
           />
         );
       })}
-    </div>
+    </BadgeContainer>
   );
 }
 
