@@ -1,11 +1,9 @@
 import styles from './Edit.module.scss';
 import ToggleButton from '../../components/commons/ToggleButton/ToggleButton';
 import Input from '../../components/commons/Input/Input';
-import Badge from '../../components/commons/Badge/Badge';
 import Dropdown from '../../components/commons/Dropdown/Dropdown';
-import { createContext, useCallback, useMemo, useState } from 'react';
+import { createContext, useCallback, useState } from 'react';
 import BADGE_OPTIONS from '../../constants/badgeOptions';
-import ResultTab from '../../components/ResultTab/ResultTab';
 import BadgeContainer from '../../components/commons/BadgeContainer/BadgeContainer';
 
 export const ToggleContext = createContext();
@@ -32,26 +30,18 @@ function Edit() {
     <main className={styles.main}>
       <ToggleContext.Provider value={{ selectedToggle, setSelectedToggle }}>
         <ToggleButton />
-      </ToggleContext.Provider>
-      <StackContext.Provider
-        value={{ techStacks, onAdd, onDelete, badgeType, setBadgeType }}>
-        {selectedToggle === 'form' ? (
-          <>
-            <BadgeContainer>
-              {techStacks.map((item, i) => {
-                return <Badge key={`${item.title}${i}`}>{item.title}</Badge>;
-              })}
-            </BadgeContainer>
+        <StackContext.Provider
+          value={{ techStacks, onAdd, onDelete, badgeType, setBadgeType }}>
+          <BadgeContainer />
 
-            <Dropdown option={BADGE_OPTIONS} />
-            <Input />
-          </>
-        ) : (
-          <>
-            <ResultTab badgeType={badgeType} />
-          </>
-        )}
-      </StackContext.Provider>
+          {selectedToggle === 'form' && (
+            <>
+              <Dropdown option={BADGE_OPTIONS} />
+              <Input />
+            </>
+          )}
+        </StackContext.Provider>
+      </ToggleContext.Provider>
     </main>
   );
 }
