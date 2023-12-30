@@ -15,7 +15,7 @@ function Input({ onAdd }) {
   };
 
   const handleClick = (e) => {
-    onAdd({ title: e.target.dataset['title'] });
+    onAdd({ title: value });
   };
 
   return (

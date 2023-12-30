@@ -2,12 +2,15 @@ import styles from './ToggleButton.module.scss';
 import { useState } from 'react';
 import clsx from 'clsx';
 
-function ToggleButton() {
+function ToggleButton({ onClick }) {
   const [selected, setSelected] = useState('form');
   return (
     <div className={styles.container}>
       <button
-        onClick={() => setSelected('form')}
+        onClick={() => {
+          setSelected('form');
+          onClick('form');
+        }}
         className={clsx(
           styles.button,
           selected === 'form' ? styles.selected : false
@@ -15,7 +18,10 @@ function ToggleButton() {
         입력
       </button>
       <button
-        onClick={() => setSelected('preview')}
+        onClick={() => {
+          setSelected('preview');
+          onClick('preview');
+        }}
         className={clsx(
           styles.button,
           selected === 'preview' ? styles.selected : false
