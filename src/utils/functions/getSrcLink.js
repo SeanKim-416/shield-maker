@@ -1,9 +1,15 @@
+import getIconColor from './getIconColor';
+
 const getSrcLink = (stack, buttonType) => {
   const hex = stack?.hex ? stack.hex : 'cccccc';
   const title = stack.title.replace('-', ' ');
-  const query = stack?.slug ? `&logo=${stack.slug}&logoColor=black` : '';
+  const query = stack?.slug
+    ? `&logo=${stack.slug}&logoColor=${getIconColor(hex)}&color=${hex}`
+    : '';
 
-  return `https://img.shields.io/badge/${title}-${hex}?style=${buttonType}${query}`;
+  return `https://img.shields.io/badge/${title}-${getIconColor(
+    hex
+  )}?style=${buttonType}${query}`;
 };
 
 const getHtmlTag = (stack, buttonType) => {

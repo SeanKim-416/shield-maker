@@ -7,13 +7,13 @@ import styles from './CodeBlock.module.scss';
 import React, { useState } from 'react';
 import clsx from 'clsx';
 
-function CodeBlock({ techstacks, buttontype }) {
+function CodeBlock({ techstacks, badgeType }) {
   const [isCopied, setIsCopied] = useState(false);
 
   const markDownArray = [];
 
   techstacks.forEach((stack) => {
-    markDownArray.push(getHtmlTag(stack, buttontype));
+    markDownArray.push(getHtmlTag(stack, badgeType));
   });
 
   const code = markDownArray.join(' ');
