@@ -1,0 +1,30 @@
+@import '../../../styles/variables';
+
+.button {
+  //   display: flex;
+  height: 4rem;
+  padding: 0.8rem 1.6rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 0.6rem;
+  border: none;
+  width: 50%;
+  @include body3;
+}
+
+.selected {
+  border: 2px solid $primary;
+  background: var(--white, #fff);
+  color: $primary;
+  @include body3;
+  font-weight: 700;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background: #efefef;
+  border-radius: 0.6rem;
+}

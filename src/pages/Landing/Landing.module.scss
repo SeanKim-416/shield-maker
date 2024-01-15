@@ -1,0 +1,100 @@
+@import '../../styles/variables';
+
+.main {
+  padding: 0 2.4rem;
+}
+
+.article {
+  display: flex;
+
+  margin: 6rem auto 0;
+
+  background-color: $secondary;
+  border-radius: 1.6rem;
+
+  @media screen and (min-width: 375px) {
+    flex-direction: column;
+    width: 100%;
+    padding: 4rem 2rem;
+    gap: 3.6rem;
+  }
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    padding: 6rem;
+    gap: 6rem;
+  }
+  @media screen and (min-width: 1248px) {
+    flex-direction: row;
+    max-width: 120rem;
+    height: 32.4rem;
+    gap: 8rem;
+  }
+}
+
+.section {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 2rem;
+
+  & .slogan {
+    @include h3;
+    font-weight: 700;
+  }
+
+  & .description {
+    @include body1;
+    color: $grayscale-50;
+  }
+
+  @media screen and (min-width: 1248px) {
+    max-width: 26.8rem;
+  }
+}
+
+.exImg {
+  display: block;
+
+  @media screen and (min-width: 375px) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1248px) {
+    height: 100%;
+  }
+}
+
+.btnItem {
+  @media screen and (min-width: 375px) {
+    width: 100%;
+    & > * {
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 1248px) {
+    width: fit-content;
+  }
+}
+
+.btnList {
+  display: flex;
+  position: absolute;
+  gap: 2rem;
+  margin: 0 auto;
+  justify-content: center;
+  bottom: 2.4rem;
+  left: 0;
+  right: 0;
+
+  @media screen and (min-width: 375px) {
+    flex-direction: column;
+    left: 2.4rem;
+    right: 2.4rem;
+  }
+
+  @media screen and (min-width: 1248px) {
+    flex-direction: row;
+  }
+}
